@@ -27,19 +27,20 @@ body {
     max-width: 960px;
     margin-left: auto;
     margin-right: auto;
-    background-color: white;
-    height: 100%;  
+    background-color: rgb(158, 213, 158); 
+    height: 100%;
 }
 
-h1#title {
-
-    height: 314px;
+header > img {
+    width: 100%;
+    border: 5px solid rgb(39, 176, 39);
 }
 
 nav.horizontal {
     display: table;
     margin-top: 10px;
     width: 100%;
+    margin-bottom: 20px;
 
 }
 
@@ -50,16 +51,55 @@ nav.horizontal > ul {
 
 nav.horizontal > ul > li {
     display: table-cell;
-    float: left;
+    float: ;
     text-align: center;
     width: 16.5%;
     
 }
 
 
+p {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row nowrap; 
+    flex-flow: row nowrap;
+    margin-right: auto;
+    margin-left: auto;
+    width: 47%;
+    float: left;
+    padding: 10px 30px 10px 20px;
+    
+    font-size: 18px;
+    
+}
 
+p::after {
+    content: "";
+    display: table;
+    clear: both;
+ }
 
+/*
+===========================
+Devices size 480px or less 
+===========================
+*/
 
+@media only screen and (max-width: 480px) {
+    article {
+        display: block;
+        width: 100%;
+        
+    }
+    a#navicon {
+        display: block;
+    }
+    nav.horizontal ul {
+        display: none;
+    }
 
-
-
+    a#navicon:hover+ul, 
+    nav.horizontal ul:hover {
+        display: block;
+    }
+}
