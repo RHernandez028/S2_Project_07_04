@@ -14,70 +14,124 @@
    Jersey Buoys home page
 
 */
-
+/* HTML and Body */
 html{
     background: url(jb_back2.png) fixed no-repeat ;
     background-size: 100%;
     width: 100%;
-    height: 100%
 }
+
 body {
     display: block;
-    min-width: 640px;
+    min-width: 320px;
     max-width: 960px;
     margin-left: auto;
     margin-right: auto;
     background-color: rgb(158, 213, 158); 
+    font-family: Arial, Helvetica, sans-serif;
     height: 100%;
 }
 
-header > img {
-    width: 100%;
-    border: 5px solid rgb(39, 176, 39);
+body::after {
+    content: "";
+    display: table;
+    clear: both;
 }
 
+/* Header Image */
+header > img {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 0;
+}
+
+/* Header Nav */
 nav.horizontal {
     display: table;
-    margin-top: 10px;
     width: 100%;
+    height: 100%;
+    float: left;
+    margin-top: 0;
     margin-bottom: 20px;
+    background-color: rgb(69, 119, 207); 
 
 }
 
 nav.horizontal > ul {
     display: table-row;
-    width: 100%
+    width: 100%;
+    height: 100%;
+    margin-top: 10px;
 }
 
 nav.horizontal > ul > li {
     display: table-cell;
-    float: ;
+    float: left;
     text-align: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
     width: 16.5%;
-    
 }
 
 
+ ul.hidden {
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+/* Drop Down Nav */
+a.head:hover+ul.hidden,
+ul.hidden:hover {
+    display: block;
+}
+
+/* Nav Icon Styles */
+a#navicon {
+    display: none;
+}
+
+
+
+/* "Meat" pargraphs */
+aside {
+    display: inline-block;
+    width: 60%;
+}
 p {
     display: -webkit-flex;
     display: flex;
     -webkit-flex-flow: row nowrap; 
     flex-flow: row nowrap;
-    margin-right: auto;
-    margin-left: auto;
-    width: 47%;
     float: left;
-    padding: 10px 30px 10px 20px;
-    
+    width: 45%;
+    padding: 10px 20px 10px 20px;
     font-size: 18px;
-    
 }
 
 p::after {
     content: "";
     display: table;
     clear: both;
- }
+}
+
+/* Descriptionl List Styles */
+section {
+    display: inline-block;
+    float: right;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*
 ===========================
@@ -86,14 +140,24 @@ Devices size 480px or less
 */
 
 @media only screen and (max-width: 480px) {
-    article {
+    aside {
         display: block;
         width: 100%;
-        
     }
+
+    p {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap; 
+    flex-flow: row wrap;
+    width: 100%;
+    }
+
+
     a#navicon {
         display: block;
     }
+    
     nav.horizontal ul {
         display: none;
     }
